@@ -1,0 +1,101 @@
+
+(rules PCB techinup_if
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 11362)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.5)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    PWR "74165_CE" "RE1_A" "RE1_B" "RE2_A" "RE2_B" VCC "Net-(C13-Pad1)"
+    "Net-(C15-Pad1)" "Net-(C16-Pad1)" "Net-(C17-Pad1)" "Net-(D1-Pad1)" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "Net-(D3-Pad2)" "Net-(D4-Pad2)"
+    "Net-(D5-Pad2)" "Net-(D6-Pad2)" "Net-(D7-Pad2)" "Net-(D8-Pad2)" "Net-(D9-Pad2)" "Net-(D10-Pad2)" "Net-(D11-Pad2)" "Net-(D11-Pad1)"
+    "Net-(D12-Pad2)" "Net-(D13-Pad2)" "Net-(D14-Pad2)" "Net-(D15-Pad2)" "Net-(D16-Pad2)" "Net-(D17-Pad2)" "Net-(D18-Pad2)" "Net-(D19-Pad2)"
+    "Net-(D20-Pad2)" "Net-(D21-Pad2)" "Net-(D21-Pad1)" "Net-(D22-Pad2)" "Net-(D23-Pad2)" "Net-(D24-Pad2)" "Net-(D25-Pad2)" "Net-(D26-Pad2)"
+    "Net-(D27-Pad2)" "Net-(D28-Pad2)" "Net-(D29-Pad2)" "Net-(D30-Pad2)" "Net-(D31-Pad1)" "Net-(D31-Pad2)" "Net-(D32-Pad2)" "Net-(D33-Pad2)"
+    "Net-(D34-Pad2)" "Net-(D35-Pad2)" "Net-(D36-Pad2)" "Net-(D37-Pad2)" "Net-(D38-Pad2)" "Net-(D39-Pad2)" "Net-(D40-Pad2)" UVCC
+    D7 "D-" D+ PB0 "SCK_atmega" "MOSI_atmega" "MISO_atmega" "Net-(IC1-Pad12)"
+    "Net-(IC1-Pad13)" col1 col2 col3 col4 col6 col5 col7
+    col8 col9 col10 row1 row2 row3 "Net-(IC1-Pad36)" "Net-(IC1-Pad37)"
+    "Net-(IC1-Pad38)" "IO_A3" "IO_A2" row4 "CS_LCD" "JOY_X" "JOY_Y" "JOY_SW"
+    "RE1_SW" "RE2_SW" "MOSI_3.3" "MISO_3.3" "SCK_3.3" "74165_SH" "CS_STM" "74165_CK"
+    "74165_OUT" "D_C" "4051_S1_1" "LCD_RESET" "4051_S2_1" "4051_S3_1" "4051_OUT_1" "4051_S1_2"
+    "4051_S2_2" "4051_S3_2" "4051_OUT_2" TX2 RX1 RX2 TX1 PA8
+    "Net-(J3-Pad54)" "Net-(J3-Pad57)" LED "Net-(JP1-Pad2)" "Net-(JP2-Pad2)" "Net-(JP3-Pad2)" "Net-(JP4-Pad2)" "Net-(JP5-Pad2)"
+    "Net-(JP6-Pad2)" "Net-(JP7-Pad2)" "Net-(JP8-Pad2)" "Net-(JP9-Pad2)" "Net-(JP10-Pad2)" KEY1 KEY2 KEY9
+    KEY10 KEY11 KEY12 KEY13 KEY14 KEY15 KEY16 "Net-(JP21-Pad2)"
+    KEY3 KEY4 KEY17 KEY18 KEY19 KEY20 KEY21 KEY22
+    KEY23 KEY24 KEY5 KEY6 KEY25 KEY26 KEY27 KEY28
+    KEY29 KEY30 KEY31 KEY32 KEY7 KEY8 KEY33 KEY34
+    KEY35 KEY36 KEY37 KEY38 KEY39 KEY40 "Net-(JP60-Pad1)" "Net-(JP61-Pad2)"
+    "Net-(JP62-Pad2)" "Net-(JP63-Pad2)" "Net-(RN1-Pad9)" "Net-(RV1-Pad2)" "Net-(RV2-Pad2)" "Net-(RV3-Pad2)" "Net-(RV4-Pad2)" "Net-(RV5-Pad2)"
+    "Net-(RV6-Pad2)" "Net-(RV7-Pad2)" "Net-(RV8-Pad2)" "Net-(RV9-Pad2)" "Net-(RV10-Pad2)" "Net-(RV11-Pad2)" "Net-(RV12-Pad2)" "Net-(RV13-Pad2)"
+    "Net-(RV14-Pad2)" "Net-(RV15-Pad2)" "Net-(RV16-Pad2)" "Net-(U4-Pad7)" "Net-(U4-Pad9)" "Net-(U5-Pad7)" "Net-(U5-Pad9)" "Net-(U6-Pad7)"
+    "Net-(U6-Pad9)" "Net-(U7-Pad9)" "Net-(U7-Pad7)" "Net-(U8-Pad7)" "Net-(U12-Pad42)" "Net-(U12-Pad41)" "Net-(U12-Pad17)" "Net-(U12-Pad2)"
+    "Net-(U12-Pad1)" "Net-(J1-Pad1)" "Net-(J1-Pad2)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
